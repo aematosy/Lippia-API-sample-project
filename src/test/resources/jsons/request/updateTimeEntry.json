@@ -1,0 +1,13 @@
+{
+  "url": "{{baseUrl}}",
+
+  "headers": {
+    "Content-Type": "application/json",
+    "x-api-key": "{{apiKey}}"
+  },
+  "body": {
+    "end": "{{END_TIME}}",
+    "start": "{{START_TIME}}"
+  },
+  "endpoint": "/v1/workspaces/{{workspaceId}}/time-entries/{{idEntry}}"
+}

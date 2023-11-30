@@ -17,11 +17,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <base.api.url>https://reqres.in/api/users</base.api.url>
+        <base.api.url>https://api.clockify.me/api</base.api.url>
         <cucumber.stepsDefinitions>--glue ar/steps --glue com/crowdar/api/rest</cucumber.stepsDefinitions>
         <cucumber.hooks>--glue com/crowdar/bdd/cukes --glue ar/apiExampleProject/hook</cucumber.hooks>
 		<cucumber.tags>@Success</cucumber.tags>
         <crowdar.cucumber.plugins>--plugin pretty --plugin api.report.CucumberReporter:</crowdar.cucumber.plugins>
+        <cucumber.reporters>--plugin pretty --plugin com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:</cucumber.reporters>
 		<crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${crowdar.cucumber.plugins}</crowdar.cucumber.option>
         <crowdar.projectType>API</crowdar.projectType>
 
@@ -61,6 +62,11 @@
             <artifactId>extentreports-cucumber4-adapter</artifactId>
             <version>1.1.0.10</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+        </dependency>
     </dependencies>
     <build>
         <filters>
@@ -91,6 +97,4 @@
 			<url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
 		</repository>
 	</repositories>
-    
-
 </project>

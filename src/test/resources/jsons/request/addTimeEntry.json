@@ -1,0 +1,29 @@
+{
+  "url": "{{baseUrl}}",
+
+  "headers": {
+    "Content-Type": "application/json",
+    "x-api-key": "{{apiKey}}"
+  },
+  "body": {
+    "billable": true,
+    "customAttributes": [
+      {
+        "name": "Test AddEntry",
+        "namespace": "AdrianTest",
+        "value": "6525bdd143528600a423cca5"
+      }
+    ],
+    "customFields": [
+      {
+        "customFieldId": "Adrian",
+        "sourceType": "WORKSPACE"
+      }
+    ],
+    "description": "{{description}}",
+    "end": "{{END_TIME}}",
+    "projectId": "{{PROYECTO_ID}}",
+    "start": "{{START_TIME}}"
+  },
+  "endpoint": "/v1/workspaces/{{workspaceId}}/time-entries"
+}
